@@ -7,7 +7,7 @@ const teamProject = document.getElementById('teamProject')
 
 // About brand section
 const brandContainer = document.getElementsByClassName('brandContainer')[0]
-const targetAllInputs = document.getElementsByClassName('formContainer__input')
+const targetAllInputs = document.querySelectorAll('.formContainer__input')
 const brandName = document.getElementById('brandName')
 const brandReward = document.getElementById('brandReward')
 const brandValue = document.getElementById('brandValue')
@@ -19,7 +19,7 @@ const lifetimeReward = document.getElementById('lifetimeReward')
 const lifetimeValue = document.getElementById('lifetimeValue')
 
 // Target brands buttos 
-const targetAllButtons = document.getElementsByClassName('mainContainer__button')
+const targetAllButtons = document.querySelectorAll('.mainContainer__button')
 
 
 
@@ -61,9 +61,7 @@ const calculateAllResult = () => {
 
 
 //****************** Add Events To All Inputs *************//
-for (let i = 0; i < targetAllInputs.length; i++) {
-    targetAllInputs[i].addEventListener('keyup', calculateAllResult)
-}
+targetAllInputs.forEach(item => item.addEventListener('keyup', calculateAllResult))
 
 
 //******************** To Measure Branded Values *****************/
@@ -94,6 +92,4 @@ const measureBranded = (e) => {
     }
 }
 
-for (let i = 0; i < targetAllButtons.length; i++) {
-    targetAllButtons[i].addEventListener('click', measureBranded)
-}
+targetAllButtons.forEach(item => item.addEventListener('click', measureBranded))
