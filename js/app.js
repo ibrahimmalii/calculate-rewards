@@ -20,9 +20,7 @@ const lifetimeValue = document.getElementById('lifetimeValue')
 
 // Target brands buttos 
 const targetAllButtons = document.getElementsByClassName('mainContainer__button')
-const brex = document.getElementById('brex')
-const stripe = document.getElementById('stripe')
-const amex = document.getElementById('amex')
+
 
 
 
