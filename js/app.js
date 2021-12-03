@@ -4,8 +4,10 @@ const media = document.getElementById('media')
 const corp = document.getElementById('corp')
 const teamProject = document.getElementById('teamProject')
 
+
 // About brand section
 const brandContainer = document.getElementsByClassName('brandContainer')[0]
+const targetAllInputs = document.getElementsByClassName('formContainer__input')
 const brandName = document.getElementById('brandName')
 const brandReward = document.getElementById('brandReward')
 const brandValue = document.getElementById('brandValue')
@@ -17,6 +19,7 @@ const lifetimeReward = document.getElementById('lifetimeReward')
 const lifetimeValue = document.getElementById('lifetimeValue')
 
 // Target brands buttos 
+const targetAllButtons = document.getElementsByClassName('mainContainer__button')
 const brex = document.getElementById('brex')
 const stripe = document.getElementById('stripe')
 const amex = document.getElementById('amex')
@@ -44,8 +47,8 @@ const checkIfValuesExist = (inputOne, inputTwo, inputThree, inputFour) => {
 }
 
 //*************** To Measure Unlimited And LifeTime Rewards *************//
-const measureResults = () => {
-    if (checkIfValuesExist(vendor.value, media.value, corp.value, teamProject.value)) {
+const measureResults = (valueOne, valueTwo, valueThree, valueFour) => {
+    if (checkIfValuesExist(valueOne, valueTwo, valueThree, valueFour)) {
         let summation = getSumResult(vendor.value, media.value, corp.value, teamProject.value)
         unlimitedReward.value = calculateUnlimitedRewards(summation)
         unlimitedValue.innerText = `$${calculateUnlimitedRewards(summation).toFixed(1)}`
@@ -54,12 +57,15 @@ const measureResults = () => {
     }
 }
 
+const calculateAllResult = () => {
+    return measureResults(vendor.value, media.value, corp.value, teamProject.value)
+}
+
 
 //****************** Add Events To All Inputs *************//
-vendor.addEventListener('keyup', measureResults)
-media.addEventListener('keyup', measureResults)
-corp.addEventListener('keyup', measureResults)
-teamProject.addEventListener('keyup', measureResults)
+for (let i = 0; i < targetAllInputs.length; i++) {
+    targetAllInputs[i].addEventListener('keyup', calculateAllResult)
+}
 
 
 //******************** To Measure Branded Values *****************/
@@ -90,6 +96,6 @@ const measureBranded = (e) => {
     }
 }
 
-brex.addEventListener('click', measureBranded)
-stripe.addEventListener('click', measureBranded)
-amex.addEventListener('click', measureBranded)
+for (let i = 0; i < targetAllButtons.length; i++) {
+    targetAllButtons[i].addEventListener('click', measureBranded)
+}
