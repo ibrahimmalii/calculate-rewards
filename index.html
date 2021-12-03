@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="formContainer">
+        <h3 class="formContainer__title">Calculate Your Rewards</h3>
+
+        <form>
+            <div class="form-group">
+                <label class="formContainer__label">Vendor/Bills</label>
+                <input class="formContainer__input" type="number" name="vendor" id="vendor" placeholder="Enter a number">
+            </div>
+            <div class="form-group">
+                <label class="formContainer__label" for="media">Media/Ad Spend</label>
+                <input class="formContainer__input" type="number" name="media" id="media" placeholder="Enter a number">
+            </div>
+            <div class="form-group">
+                <label class="formContainer__label" for="corp">Corp.Spend</label>
+                <input class="formContainer__input" type="number" name="corp" id="corp" placeholder="Enter a number">
+            </div>
+            <div class="form-group">
+                <label class="formContainer__label" for="team-project">Team Project</label>
+                <input class="formContainer__input" type="number" name="team-project" id="teamProject" placeholder="Enter a number">
+            </div>
+            <div class="form-group">
+                <input type="button" class="mainContainer__button" id="brex" value="Brex">
+                <input type="button" class="mainContainer__button" id="stripe" value="Stripe">
+                <input type="button" class="mainContainer__button" id="amex" value="Amex">
+            </div>
+            <div class="form-group">
+                <img src="images/calculator.jpg" width="100" height="100">
+                <div class="formContainer__rangeBars">
+                    <div class="brandContainer">
+                        <label class="formContainer__label" for="brand-name" id="brandName">Brand Name</label>
+                        <progress class="mainContainer__range" id="brandReward" value="0" max="100"></progress>
+                        <span id="brandValue"></span>
+                    </div>
+                    <div class="formContainer__unlimitedSection">
+                        <label class="formContainer__label" for="unlimited-reward">Unlimited Reward</label>
+                        <progress class="mainContainer__range" id="unlimitedReward" value="0" max="100"></progress>
+                        <span id="unlimitedValue"></span>
+                    </div>
+                    <div class="formContainer__lifetimeSection">
+                        <label class="formContainer__label" for="lifetime-reward">Lifetime Reward</label>
+                        <progress class="mainContainer__range" id="lifetimeReward" value="0" max="100"></progress>
+                        <span id="lifetimeValue"></span>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

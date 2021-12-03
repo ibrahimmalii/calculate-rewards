@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.formContainer {
+    background-color: #e7e7e7;
+    padding: 1rem 1rem;
+    width: 50%;
+    margin: 1% 1%;
+}
+
+.formContainer__title {
+    color: blue;
+    margin-bottom: 1rem
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.formContainer__label {
+    flex: auto;
+    color: black;
+}
+
+.formContainer__input {
+    width: 16rem;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 3px;
+}
+
+.mainContainer__button {
+    width: 9rem;
+}
+
+.brandContainer {
+    visibility: hidden
+}
